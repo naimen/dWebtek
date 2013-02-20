@@ -1,30 +1,31 @@
 //cloud.dtd
-	<!DOCTYPE SYSTEM "http://www.cs.au.dk/dWebTek/2011">	
-
-	<!ELEMENT sellItems shopKey,itemID,customerID,saleAmount>
+<?xml version="1.1"?>
+<!DOCTYPE SYSTEM "http://www.cs.au.dk/dWebTek/2011">
 	
-	<!ELEMENT adjustItemStock shopKey,itemID,adjustment>
+	<!ELEMENT sellItems (shopKey,itemID,customerID,saleAmount)>
+	
+	<!ELEMENT adjustItemStock (shopKey,itemID,adjustment)>
 	<!ELEMENT adjustment (#PCDATA)>
 
-	<!ELEMENT modifyItem shopKey,itemID,itemName,itemPrice,itemURL,itemDescription>
+	<!ELEMENT modifyItem (shopKey,itemID,itemName,itemPrice,itemURL,itemDescription)>
 	
-	<!ELEMENT login customerName,customerPass>
+	<!ELEMENT login (customerName,customerPass)>
  
-	<!ELEMENT createItem shopKey,itemName>
+	<!ELEMENT createItem (shopKey,itemName)>
 	
-	<!ELEMENT createCustomer shopKey,customerName,customerPass>
+	<!ELEMENT createCustomer (shopKey,customerName,customerPass)>
 
-	<!ELEMENT createCustomerResponse customerID, usernameTaken>
+	<!ELEMENT createCustomerResponse (customerID | usernameTaken)*>
 
 	<!ELEMENT usernameTaken EMPTY>
 
-	<!ELEMENT saleResponse ok, itemSoldOut, error>
+	<!ELEMENT saleResponse (ok | itemSoldOut | error)*>
 	
 	<!ELEMENT ok EMPTY>
 	<!ELEMENT itemSoldOut EMPTY>
 	<!ELEMENT error EMPTY>
 	
-	<!ELEMENT loginResponse customerID,customerName>
+	<!ELEMENT loginResponse (customerID,customerName)>
 	
 	<!--  Other stuff --> 
 	
@@ -36,13 +37,13 @@
 	
 	<!ELEMENT customers customer>
 	
-	<!ELEMENT item itemID,itemName,itemURL,itemPrice,itemStock,itemDescription>
+	<!ELEMENT item (itemID,itemName,itemURL,itemPrice,itemStock,itemDescription)>
 
-	<!ELEMENT shop shopID,shopName,shopURL>
+	<!ELEMENT shop (shopID,shopName,shopURL)>
 
-	<!ELEMENT sale saleTime,saleAmount,shopID,itemID,customerID,saleItemPrice>
+	<!ELEMENT sale (saleTime,saleAmount,shopID,itemID,customerID,saleItemPrice)>
 	
-	<!ELEMENT customer customerID,customerName>
+	<!ELEMENT customer (customerID,customerName)>
 
 	<!ELEMENT customerName (#PCDATA)>
 
