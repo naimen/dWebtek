@@ -171,13 +171,8 @@ xmlns:h="http://www.w3.org/1999/xhtml" elementFormDefault="qualified">
 		</restriction> 
 	</simpleType> 
 	
-	<element name="customerPass" type="w:customerPass"/> 
-	<simpleType name="customerPass"> 
-		<restriction base="w:simpleText"> 
-			<minLength value="3"/> 
-			<maxLength value="20"/> 
-		</restriction> 
-	</simpleType> 
+	<!ELEMENT customerPass wcustomerPass>
+	<!ELEMENT wcustomerPass (#PCDATA)>
 	
 	<element name="itemID" type="nonNegativeInteger"/> 
 	<element name="itemName" type="string"/> 
@@ -186,16 +181,16 @@ xmlns:h="http://www.w3.org/1999/xhtml" elementFormDefault="qualified">
 	<element name="itemStock" type="nonNegativeInteger"/> 
 	<element name="itemDescription" type="h:htag"/> 
 	
-	<element name="shopKey" type="string"/> 
-	<element name="shopID" type="nonNegativeInteger"/> 
-	<element name="shopName" type="string"/> 
-	<element name="shopURL" type="anyURI"/> 
+	<!ELEMENT shopKey (#PCDATA)>
+	<!ELEMENT shopID (#PCDATA)> 
+	<!ELEMENT shopName (#PCDATA)>
+	<!ELEMENT shopURL (#PCDATA)>
 	
 	<!-- Time is in miliseconds since Jan 1 1970 (same as java.lang.Date expects) --> 
-	<element name="saleTime" type="nonNegativeInteger"/> 
-	<element name="saleAmount" type="nonNegativeInteger"/> 
-	 
-	<element name="customerID" type="nonNegativeInteger"/> 
-	<element name="saleItemPrice" type="nonNegativeInteger"/> 
+	<!ELEMENT saleTime (#PCDATA)>
+
+	<!ELEMENT customerID (#PCDATA)>
+	<!ELEMENT saleItemPrice (#PCDATA)>
+	<!ELEMENT saleAmount (#PCDATA)>
 	
 </schema>
