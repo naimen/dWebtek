@@ -1,5 +1,6 @@
 //cloud.dtd
-	
+	<!DOCTYPE SYSTEM "http://www.cs.au.dk/dWebTek/2011">	
+
 	<!ELEMENT sellItems shopKey,itemID,customerID,saleAmount>
 	
 	<!ELEMENT adjustItemStock shopKey,itemID,adjustment>
